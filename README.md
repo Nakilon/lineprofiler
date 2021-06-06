@@ -33,3 +33,14 @@ On exit it will print something like this:
           break if Time.now - prev_time > 10
 ...
 ```
+
+If you pass a path to another source file (for example, some lib) in `LINEPROFILER` env var it will profile that file too:
+
+```none
+$ LINEPROFILER=lib/rasel.rb ruby -r../lineprofiler/lib/lineprofiler.rb constants_print.rb
+...
+constants_print.rb
+  ...
+lib/rasel.rb
+  ...
+```
