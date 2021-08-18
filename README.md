@@ -9,7 +9,7 @@ gem install lineprofiler
 ruby -r lineprofiler my_slow_program.rb
 ```
 
-On exit it will print something like this:
+On exit (wether the program exited or you've interrupted it via `^C`) it will print the line profiling report, like this:
 
 ```none
 ...
