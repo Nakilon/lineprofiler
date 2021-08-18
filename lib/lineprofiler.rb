@@ -1,5 +1,4 @@
 profile = []
-Thread.abort_on_exception = true
 Thread.new do
   loop do
     profile.push Thread.main.backtrace_locations.map{ |loc| [loc.absolute_path, loc.lineno] }
@@ -16,6 +15,7 @@ END {
       end.fdiv(profile.size).round(4) * 100
       puts "%-8s%s" % [("%5.2f%%" % v unless v.zero?).to_s, line[0, IO.console.winsize[1]-10]]
     end
+    puts ""
   end
   puts ""
 }
