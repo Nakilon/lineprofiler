@@ -59,3 +59,9 @@ constants_print.rb
 lib/rasel.rb
   ...
 ```
+
+You are supposed to pass this env var if you run the code via `-e`. Also note that in the next example we require the library we want to profiler before the profiler so we don't profile the initialization but only the invocation step:
+
+```bash
+$ LINEPROFILER=common.rb bundle exec ruby -r./common -rlineprofiler -e 'puts Common.my_method'
+```

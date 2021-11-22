@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name         = "lineprofiler"
-  spec.version      = "0.0.0"
+  spec.version      = "0.0.1"
   spec.summary      = "very simple Ruby line profiler"
 
   spec.author       = "Victor Maslov aka Nakilon"

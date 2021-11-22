@@ -7,7 +7,7 @@ Thread.new do
 end
 END {
   require "io/console"
-  [$0, *ENV["LINEPROFILER"]].each do |filename|
+  ([$0, *ENV["LINEPROFILER"]] - %w{-e}).each do |filename|
     puts filename
     File.foreach(filename).with_index do |line, i|
       v = profile.count do |bt|
